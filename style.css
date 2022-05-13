@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    font-family: Segoe UI;
+    background: black;
+    user-select: none;
+}
+/*Прелоадер*/
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background: #0D0D0D;
+    z-index: 1001;
+}
+.preloader_image {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+}
+.preloader_text {
+    position: relative;
+    width:100%;
+    margin: 25% 0 25% 0;
+    text-align: center;
+    font-family: MS Mincho Regular;
+    font-size: 40px;
+    color: #fff;
+}
+.loaded_hiding #preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+.loaded #preloader {
+    display: none;
+}
+/*Меню мобильное*/
+#menubarm {
+    display: grid;
+    visibility: visible;
+    grid-template-columns: 50% 50%;
+    background-image: url(images/bgmain.png);
+    height: 50px;
+    width: 100%;
+    text-decoration: none;
+    position: -webkit-sticky; /*Создаём "прилипание" элемента к верху страницы*/
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 10px 1px;
+    z-index: 4;
+}
+.menufavm {
+    margin-left: 7px;
+}
+/*Меню пк*/
+#menubar {
+    display: none;
+    visibility: hidden;
+    grid-template-columns: 50% 50%;
+    background-image: url(images/bgmain.png);
+    height: 50px;
+    width: 100%;
+    /*border-radius: 0px 0px 7px 7px;*/
+    text-decoration: none;
+    position: -webkit-sticky; /*Создаём "прилипание" элемента к верху страницы*/
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 10px 1px;
+    z-index: 4;
+}
+@media screen and (min-device-width: 500px) {
+    #menubar {
+        display: grid;
+        visibility: visible;
+    }
+    #menubarm {
+        display: none;
+        visibility: hidden;
+    }
+}
+/*Собственно меню*/
+#menu {
+    display: flex;
+    justify-content: left;
+}
+.menubutton {
+    font-size: 130%;
+    display: block;
+}
+.favicon {
+    height: 36px;
+    margin: 7px 0px 7px 0px;
+}
+#menubar a {
+    text-decoration: none;
+    color: #fff;
+    display: block; 
+    padding: 0px 7px;
+    line-height: 50px;
+}
+/*Социальные ссылки*/
+#socialbar {
+    display: flex;
+    justify-content: right;
+}
+.inline_soc {
+    padding: 2px 0px 0px 0px
+}
+.icon {
+    width: 20px; height: 20px;
+}
+/*Заглавный баннер*/
+#header {
+    margin-bottom: -4px;
+    /*background-image: url(images/headernew.png);*/
+    display: none;
+    visibility: hidden;
+}
+.header {
+    width: 100%;
+    z-index: 1;
+}
+@media screen and (min-device-width: 500px) {
+    #header {
+        display: grid;
+        visibility: visible;
+    }
+}
+/*Тело сайта*/
+#sitebody {
+    display: block;
+    background-image: url(images/bgmain.png);
+}
+/*Галерея с обложками*/
+#coversgallery {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+@media screen and (min-device-width: 500px) {
+    #coversgallery {
+        grid-template-columns: repeat(5, 20%);
+    }
+}
+#cover {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+#cover img {
+    width: 100%;
+    margin-bottom: -4px;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    z-index: 2; 
+}
+#covertext {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    bottom: 103px;
+    transition: all 0.3s ease-in-out;
+    z-index: 3;
+}
+#cover img:hover {
+    filter: brightness(30%);
+    z-index: 2;
+}
+#cover:hover #covertext {
+    opacity: 1;
+    z-index: 3;
+}
