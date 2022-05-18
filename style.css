@@ -192,3 +192,59 @@ body {
 #reg_en {
     display: none
 }
+
+#info {
+    background-image: url(images/bgmain.png)
+}
+#infomenu {
+    margin-top: -8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.infomenugrid {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    text-align: center;
+}
+@media screen and (min-device-width: 500px) {
+    .infomenugrid {
+        grid-template-columns: repeat(3, 33%); 
+    }
+}
+.infomenugrid li {
+    text-decoration: underline;
+    color: #fff;
+    font-size: 27px;
+}
+.infomenugrid a {
+    text-decoration: underline;
+    color: #fff;
+    font-size: 27px;
+}
+#infotext {
+    margin-left: 27px;
+    margin-right: 27px;
+    color: #fff;
+    font-size: 27px;
+    text-align: justify;
+}
+#infotext li {
+    margin-left: 25px;
+}
+#infotext a {
+    color: #fff;
+    font-size: 27px;
+}
+#infotext .header_low {
+    font-size: 35px;
+    font-weight: bold;
+}
+#infotext p {
+    text-align: center;
+}
+.presskit11 {
+    width: 15%;
+}
+.presskitlong {
+    width: 85%;
+}
