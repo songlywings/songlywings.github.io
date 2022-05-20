@@ -11,7 +11,24 @@
         <script src="js/jquery-3.6.0.js" type="text/javascript"></script>
         <!--Подключение гео-скрипта от Яндекс-->
         <script src="ru/api-maps.yandex.ru"></script>
+        <!--Скрипт на кнопку возврата-->
+        <script type="text/javascript">
+            //Скрипт на кнопку возврата
+            $(function() {
+                $(window).scroll(function() {
+                    if($(this).scrollTop() != 0) {
+                        $('#totopbtn').fadeIn();
+                    } else {
+                        $('#totopbtn').fadeOut();
+                    }
+                });
+                $('#totopbtn').click(function() {
+                    $('body,html').animate({scrollTop:0},800);
+                });
+            });
+        </script>
     </head>
+    <div id="totopbtn"><img src="images/uparrow.png"></div>
     <body>
         <!--Прелоадер-->
         <div id="preloader">
@@ -132,7 +149,13 @@
                 jQuery(".reg_ru").hide();
                 jQuery(".reg_en").show();
                 }
-            }
+            };
+            //Скрипт на плавную прокрутку до якоря
+            $("body").on('click', '[href*="#"]', function(e){
+                var fixed_offset = 100;
+                $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixed_offset }, 1000);
+                e.preventDefault();
+            });
         </script>
     </body>
 </html>
