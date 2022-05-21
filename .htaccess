@@ -1,0 +1,16 @@
+# Убираем .html после ссылки
+#RewriteBase /
+#RewriteRule (.*)\.html$ $1 [R=301,L]
+#RewriteBase /
+#RewriteRule (.*)\.php$ $1 [R=301,L]
+#RewriteBase /
+#RewriteRule (.*)\.js$ $1 [R=301,L]
+# Защита от вредоносных скриптов
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+RewriteRule ^(.*)$ index.php [F,L]
+# Защита от DDOS (максимальный выставленный размер запроса - 50 мб)
+LimitRequestBody 52428800
