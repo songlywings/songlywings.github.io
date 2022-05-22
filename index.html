@@ -7,13 +7,16 @@
         <title>Songly Wings</title>
         <link rel="icon" type="image/png" href="images/favicon.png"> 
         <link rel="stylesheet" type="text/css" href="style.css">
+        <!--Отключение кэширования-->
+        <meta http-equiv='cache-control' content='no-cache'>
+        <meta http-equiv='expires' content='0'>
+        <meta http-equiv='pragma' content='no-cache'>
         <!--Подключение jQuery-->
         <script src="js/jquery-3.6.0.js" type="text/javascript"></script>
         <!--Подключение гео-скрипта от Яндекс-->
         <script src="ru/api-maps.yandex.ru"></script>
         <!--Скрипт на кнопку возврата-->
         <script type="text/javascript">
-            //Скрипт на кнопку возврата
             $(function() {
                 $(window).scroll(function() {
                     if($(this).scrollTop() != 0) {
@@ -29,10 +32,10 @@
         </script>
         <!--Скрипт на запрет кэширования-->
         <?php
-        Header("Cache-Control: no-store, no-cache, must-revalidate"); для протокола HTTP/1.1
-        Header("Pragma: no-cache"); // для протокола HTTP/1.1
-        Header("Last-Modified: " . gmdate("D, d M Y H:i:s") . "GMT"); // дата и время генерации страницы
-        header("Expires: " . date("r")); // дата и время время, когда страница будет считаться устаревшей
+        Header("Cache-Control: no-store, no-cache, must-revalidate");
+        Header("Pragma: no-cache");
+        Header("Last-Modified: " . gmdate("D, d M Y H:i:s") . "GMT");
+        header("Expires: " . date("r"));
         ?>
     </head>
     <div id="totopbtn"><img src="images/uparrow.png"></div>
