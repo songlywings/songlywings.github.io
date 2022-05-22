@@ -27,6 +27,13 @@
                 });
             });
         </script>
+        <!--Скрипт на запрет кэширования-->
+        <?php
+        Header("Cache-Control: no-store, no-cache, must-revalidate"); для протокола HTTP/1.1
+        Header("Pragma: no-cache"); // для протокола HTTP/1.1
+        Header("Last-Modified: " . gmdate("D, d M Y H:i:s") . "GMT"); // дата и время генерации страницы
+        header("Expires: " . date("r")); // дата и время время, когда страница будет считаться устаревшей
+        ?>
     </head>
     <div id="totopbtn"><img src="images/uparrow.png"></div>
     <body>
