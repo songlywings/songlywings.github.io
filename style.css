@@ -157,6 +157,14 @@ body {
         visibility: visible;
     }
 }
+/*Бегущая строка*/
+#runningline {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    user-select: none;
+    z-index: 1;
+}
 /*Тело сайта*/
 #sitebody {
     display: block;
