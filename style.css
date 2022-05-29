@@ -74,12 +74,45 @@ body {
     position: sticky;
     top: 0;
     box-shadow: 0px 0px 10px 1px;
-    z-index: 4;
+    z-index: 5;
     user-select: none;
 }
 .menufavm {
     margin-left: 7px;
 }
+#menum {
+    display: none;
+    visibility: visible;
+    background-image: url(images/bgmain.png);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+    z-index: 4;
+}
+#menum a {
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    display: block; 
+    padding: 0px 0px;
+    line-height: 60px;
+    font-size: 50px;
+}
+.menmubutton {
+    font-size: 130%;
+    display: block;
+}
+#socialbarm {
+    display: flex;
+    justify-content: center;
+    user-select: none;
+}
+.iconm {
+    width: 30px; height: 30px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
 /*Меню пк*/
 #menubar {
     display: none;
@@ -94,7 +127,7 @@ body {
     position: sticky;
     top: 0;
     box-shadow: 0px 0px 10px 1px;
-    z-index: 4;
+    z-index: 5;
     user-select: none;
 }
 @media screen and (min-device-width: 500px) {
@@ -106,7 +139,12 @@ body {
         display: none;
         visibility: hidden;
     }
+    #menum {
+        display: none;
+        visibility: hidden;
+    }
 }
+
 /*Собственно меню*/
 #menu {
     display: flex;
@@ -127,6 +165,7 @@ body {
     padding: 0px 7px;
     line-height: 50px;
 }
+
 /*Социальные ссылки*/
 #socialbar {
     display: flex;
@@ -216,6 +255,13 @@ body {
 #cover:hover #covertext {
     opacity: 1;
     z-index: 3;
+}
+#nullcover img {
+    width: 100%;
+    margin-bottom: -4px;
+    display: block;
+    position: relative;
+    z-index: 2; 
 }
 
 /*Региональный выбор*/
