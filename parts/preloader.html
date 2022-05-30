@@ -3,7 +3,19 @@
     <head>
         <meta name="viewport" http-equiv="Content-Type" content="text/html; width=device-width, initial-scale=1; charset=utf-8">
         <script>
+            function preloader() {
+                const body = $('body');
 
+                body.addClass('loaded_hiding');
+                window.setTimeout(function () {
+                    body.addClass('loaded');
+                    body.removeClass('loaded_hiding');
+                }, 500);
+            }
+            $(window).on('load', function () {
+                preloader();
+                spoilers();
+            });
         </script>
     </head>
     <body>
