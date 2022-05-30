@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Static Template</title>
+    <meta name="viewport" http-equiv="Content-Type" content="text/html; width=device-width, initial-scale=1; charset=utf-8">
     <script src="../js/jquery-3.6.0.js"></script>
     <script>
       $(function () {
-        $(".included").load("include.html");
+        $(".menu").load("../parts/menu.html");
+      });
+      $(function () {
+        $(".mainpage").load("../parts/mainpage.html");
       });
     </script>
   </head>
   <body>
-    <div class="included"></div>
+    <div class="menu"></div>
+    <div class="mainpage"></div>
   </body>
 </html>
