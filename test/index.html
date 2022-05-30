@@ -8,6 +8,12 @@
     <script src="../ru/api-maps.yandex.ru"></script>
     <script>
       $(function () {
+        $(".upbutton").load("../parts/upbutton.html");
+      });
+      $(function () {
+        $(".preloader").load("../parts/preloader.html");
+      });
+      $(function () {
         $(".menu").load("../parts/menu.html");
       });
       $(function () {
@@ -15,7 +21,9 @@
       });
     </script>
   </head>
+  <div class="upbutton"></div>
   <body>
+    <div class="preloader"></div>
     <div class="menu"></div>
     <div class="mainpage"></div>
   </body>
