@@ -2,26 +2,6 @@
 <html>
     <head>
         <meta name="viewport" http-equiv="Content-Type" content="text/html; width=device-width, initial-scale=1; charset=utf-8">
-        <script src="../ru/api-maps.yandex.ru"></script>
-        <script>
-            //Скрипт на мобильное меню
-            $(document).ready(function(){  //дожидаемся загрузки страницы
-                $('.openmenu').on("click", function(){  //вешаем событие на клик по кнопке id="btn1"
-                    $('#menum').toggle(); //включает/выключает элемент id="text"
-                });
-            });
-            //Скрипт на геолокацию
-            window.onload = function() {
-                if (ymaps.geolocation.country == 'Россия') {
-                jQuery(".reg_ru").show();
-                jQuery(".reg_en").hide();
-                }
-                else {
-                jQuery(".reg_ru").hide();
-                jQuery(".reg_en").show();
-                }
-            };
-        </script>
     </head>
     <body>
         <!--Верхняя панель для мобильной версии-->
@@ -138,5 +118,24 @@
                 </div>
             </div>
         </div>
+        <script>
+            //Скрипт на мобильное меню
+            $(document).ready(function(){  //дожидаемся загрузки страницы
+                $('.openmenu').on("click", function(){  //вешаем событие на клик по кнопке id="btn1"
+                    $('#menum').toggle(); //включает/выключает элемент id="text"
+                });
+            });
+            //Скрипт на геолокацию
+            window.onload = function() {
+                if (ymaps.geolocation.country == 'Россия') {
+                jQuery(".reg_ru").show();
+                jQuery(".reg_en").hide();
+                }
+                else {
+                jQuery(".reg_ru").hide();
+                jQuery(".reg_en").show();
+                }
+            };
+        </script>
     </body>
 </html>
