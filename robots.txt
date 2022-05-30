@@ -4,3 +4,4 @@ Disallow: /js/
 Disallow: /images/
 Disallow: /ru/
 Disallow: /style.css
+Disallow: /parts
