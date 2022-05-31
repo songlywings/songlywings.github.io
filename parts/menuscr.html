@@ -1,16 +1,23 @@
 <!DOCTYPE html>
+<head>
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/fuckit.js"></script>
+</head>
 <html>
     <body>
         <script type="text/javascript">
             //Скрипт на мобильное меню
+            FuckIt(
             $(document).ready(function(){  //дожидаемся загрузки страницы
                 $('.openmenu').on("click", function(){  //вешаем событие на клик по кнопке id="btn1"
                     $('#menum').toggle(); //включает/выключает элемент id="text"
                 });
-            });
+            })
+            );
         </script>
         <script type="text/javascript">
             //Скрипт на геолокацию
+            Fuckit(
             window.onload = function() {
                 if (ymaps.geolocation.country == 'Россия') {
                 jQuery(".reg_ru").show();
@@ -20,7 +27,8 @@
                 jQuery(".reg_ru").hide();
                 jQuery(".reg_en").show();
                 }
-            };
+            }
+            )
         </script>
     </body>
 </html>    
