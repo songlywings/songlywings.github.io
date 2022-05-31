@@ -1,61 +1,261 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" http-equiv="Content-Type" content="text/html; width=device-width, initial-scale=1; charset=utf-8">
-    <link rel="icon" type="image/png" href="../images/favicon.png">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <script src="../js/jquery-3.6.0.js"></script>
-    <script src="../ru/api-maps.yandex.ru"></script>
-    <script>
-      //Прелоадер
-      function preloader() {
-          const body = $('body');
+    <head>
+        <meta name="viewport" http-equiv="Content-Type" content="text/html; width=device-width, initial-scale=1; charset=utf-8">
+        <meta name="Description" content="EDM-family of anthro-animals">
+        <meta name="Keywords" content="furry, furry fandom, music, edm, electronic dance music, music label, label, фурри, фурри фендом, музыка, едм, электронная танцевальная музыка, музыкальный лейбл, лейбл">
+        <meta charset="UTF-8" />
+        <title>Songly Wings</title>
+        <link rel="icon" type="image/png" href="images/favicon.png"> 
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!--Подключение jQuery-->
+        <script src="js/jquery-3.6.0.js" type="text/javascript"></script>
+        <!--Подключение гео-скрипта от Яндекс-->
+        <script src="ru/api-maps.yandex.ru"></script>
+        <!--Скрипт на кнопку возврата-->
+        <script type="text/javascript">
+            $(function() {
+                $(window).scroll(function() {
+                    if($(this).scrollTop() != 0) {
+                        $('#totopbtn').fadeIn();
+                    } else {
+                        $('#totopbtn').fadeOut();
+                    }
+                });
+                $('#totopbtn').click(function() {
+                    $('body,html').animate({scrollTop:0},800);
+                });
+            });
+        </script>
+    </head>
+    <div id="totopbtn"><img src="images/uparrow.png"></div>
+    <body>
+        <!--Прелоадер-->
+        <div id="preloader">
+            <p class="preloader_text">...she's calling you...</p>
+        </div>
+        <!--Верхняя панель для мобильной версии-->
+        <div id="menubarm">
+            <div id="menubarleft">
+                <div class="openmenu menubutton menufavm"><a><img src="images/favicon.png" class="favicon"></a></div>
+            </div>
+            <div id="menubarright"></div>
+        </div>
+        <!--Меню для мобильной версии-->
+        <div id="menum">
+            <div class="menumbutton"><a href="https://songlywings.site/">Home</a></div>
+            <div class="menumbutton"><a href="https://teletype.in/@songlywings">News</a></div>
+            <div class="menumbutton"><a href="https://songlywings.site/info">About us</a></div>
+            <div class="menumbutton reg_ru"><a href="https://sobe.ru/na/songlywings">Donate</a></div>
+            <div class="menumbutton reg_en"><a href="https://www.buymeacoffee.com/songlywings">Donate</a></div>
+            <div class="menumbutton reg_ru"><a href="https://forms.gle/isY3p6KNNqbhu3dr8">Get residence</a></div>
+            <div class="menumbutton reg_en"><a href="https://forms.gle/C48iP9PUnhR6qZJY8">Get residence</a></div>
+            <div id="socialbarm">
+                <div id="youtube" class="inline_soc" title="Youtube">
+                    <a href="https://www.youtube.com/channel/UCSXPxII_Fj7Z0LfhE0yrJsg" target="_blank"><img src="images/social/youtube.png" class="iconm"></a>
+                </div>
+                <div id="soundcloud" class="inline_soc" title="Soundcloud">
+                    <a href="https://soundcloud.com/songly_wings" target="_blank"><img src="images/social/soundcloud.png" class="iconm"></a>
+                </div>
+                <div id="bandcamp" class="inline_soc" title="Bandcamp">
+                    <a href="https://songlywings.bandcamp.com/" target="_blank"><img src="images/social/bandcamp.png" class="iconm"></a>
+                </div>
+                <div id="spotify" class="inline_soc dropdown" title="Spotify">
+                    <a href="https://open.spotify.com/user/kiw0dqqc2o45h3y7312acb8td" target="_blank"><img src="images/social/spotify.png" class="iconm"></a>
+                </div>
+                <div id="discord" class="inline_soc" title="Discord">
+                    <a href="https://discord.gg/XxAgmCaPvx" target="_blank"><img src="images/social/discord.png" class="iconm"></a>
+                </div>
+                <div id="furry_culture" class="inline_soc" title="Furry Culture">
+                    <a href="https://furry-fandom.ru/projects?id=233" target="_blank"><img src="images/social/furry_culture.png" class="iconm"></a>
+                </div>
+                <div id="furaffinity" class="inline_soc" title="Furaffinity">
+                    <a href="https://www.furaffinity.net/user/songlywings/" target="_blank"><img src="images/social/furaffinity.png" class="iconm"></a>
+                </div>
+                <div id="vk" class="inline_soc" title="VK">
+                    <a href="http://vk.com/songly_wings" target="_blank"><img src="images/social/vk.png" class="iconm"></a>
+                </div>
+                <div id="facebook" class="inline_soc" title="Facebook">
+                    <a href="https://www.facebook.com/Songly-Wings-107067595101124" target="_blank"><img src="images/social/facebook.png" class="iconm"></a>
+                </div>
+                <div id="twitter" class="inline_soc" title="Twitter">
+                    <a href="https://twitter.com/Songly_Wings" target="_blank"><img src="images/social/twitter.png" class="iconm"></a>
+                </div>
+                <div id="instagram" class="inline_soc" title="Instagram">
+                    <a href="https://www.instagram.com/songlywings/" target="_blank"><img src="images/social/instagram.png" class="iconm"></a>
+                </div>
+                <div id="telegram" class="inline_soc" title="Telegram">
+                    <a href="https://t.me/s/songly_wings" target="_blank"><img src="images/social/telegram.png" class="iconm"></a>
+                </div>
+            </div>
+        </div>
+        <!--Верхняя панель-->
+        <div id="menubar">
+            <div id="menubarleft">
+                <div id="menu">
+                    <div class="menubutton"><a href="https://songlywings.site/"><img src="images/favicon.png" class="favicon"></a></div>
+                    <div class="menubutton"><a href="https://teletype.in/@songlywings">News</a></div>
+                    <!--<div class="menubutton"><a style="color: rgb(73, 73, 73);">Stuff</a></div>-->
+                    <div class="menubutton"><a href="https://songlywings.site/info">About us</a></div>
+                    <div class="menubutton reg_ru"><a href="https://sobe.ru/na/songlywings">Donate</a></div>
+                    <div class="menubutton reg_en"><a href="https://www.buymeacoffee.com/songlywings">Donate</a></div>
+                    <div class="menubutton reg_ru"><a href="https://forms.gle/isY3p6KNNqbhu3dr8">Get residence</a></div>
+                    <div class="menubutton reg_en"><a href="https://forms.gle/C48iP9PUnhR6qZJY8">Get residence</a></div>
+                </div>
+            </div>
+            <!--<div id="menubarcenter"></div>-->
+            <div id="menubarright">
+                <div id="socialbar">
+                        <div id="youtube" class="inline_soc" title="Youtube">
+                            <a href="https://www.youtube.com/channel/UCSXPxII_Fj7Z0LfhE0yrJsg" target="_blank"><img src="images/social/youtube.png" class="icon"></a>
+                        </div>
+                        <div id="soundcloud" class="inline_soc" title="Soundcloud">
+                            <a href="https://soundcloud.com/songly_wings" target="_blank"><img src="images/social/soundcloud.png" class="icon"></a>
+                        </div>
+                        <div id="bandcamp" class="inline_soc" title="Bandcamp">
+                            <a href="https://songlywings.bandcamp.com/" target="_blank"><img src="images/social/bandcamp.png" class="icon"></a>
+                        </div>
+                        <div id="spotify" class="inline_soc dropdown" title="Spotify">
+                            <a href="https://open.spotify.com/user/kiw0dqqc2o45h3y7312acb8td" target="_blank"><img src="images/social/spotify.png" class="icon"></a>
+                        </div>
+                        <div id="discord" class="inline_soc" title="Discord">
+                            <a href="https://discord.gg/XxAgmCaPvx" target="_blank"><img src="images/social/discord.png" class="icon"></a>
+                        </div>
+                        <div id="furry_culture" class="inline_soc" title="Furry Culture">
+                            <a href="https://furry-fandom.ru/projects?id=233" target="_blank"><img src="images/social/furry_culture.png" class="icon"></a>
+                        </div>
+                        <div id="furaffinity" class="inline_soc" title="Furaffinity">
+                            <a href="https://www.furaffinity.net/user/songlywings/" target="_blank"><img src="images/social/furaffinity.png" class="icon"></a>
+                        </div>
+                        <div id="vk" class="inline_soc" title="VK">
+                            <a href="http://vk.com/songly_wings" target="_blank"><img src="images/social/vk.png" class="icon"></a>
+                        </div>
+                        <div id="facebook" class="inline_soc" title="Facebook">
+                            <a href="https://www.facebook.com/Songly-Wings-107067595101124" target="_blank"><img src="images/social/facebook.png" class="icon"></a>
+                        </div>
+                        <div id="twitter" class="inline_soc" title="Twitter">
+                            <a href="https://twitter.com/Songly_Wings" target="_blank"><img src="images/social/twitter.png" class="icon"></a>
+                        </div>
+                        <div id="instagram" class="inline_soc" title="Instagram">
+                            <a href="https://www.instagram.com/songlywings/" target="_blank"><img src="images/social/instagram.png" class="icon"></a>
+                        </div>
+                        <div id="telegram" class="inline_soc" title="Telegram">
+                            <a href="https://t.me/s/songly_wings" target="_blank"><img src="images/social/telegram.png" class="icon"></a>
+                        </div>
+                        <!--<div id="patreon" class="inline_soc" title="Patreon">
+                            <a href="https://www.patreon.com/songly_wings" target="_blank"><img src="images/social/patreon.png" class="icon"></a>
+                        </div>-->
+                </div>
+            </div>
+        </div>
+        <!--Хедер-->
+        <div id="header"><img src="images/headernew3.png" class="header"></div>
+        <!--Строка оповещения-->
+        <div id="runningline" style="font-family: MS Mincho Regular; background: rgb(255, 255, 137); color: rgb(51, 51, 0)">...something unusual is waiting for you...</div>
+        <!--Обложки-->
+        <div id="sitebody">
+                <div id="coversgallery">
+                    <!--8-->
+                    <a id="cover" href="https://hypeddit.com/l5xp1y" target="_blank">
+                        <img src="https://hypeddit-gates-prod.s3.amazonaws.com/l5xp1y_coverartmanual">
+                        <div id="covertext">
+                            <b>Velour Vibrissae</b>
+                            <br>Mindblown
+                        </div>
+                    </a>
+                    <!--7-->
+                    <a id="cover" href="https://hypeddit.com/o847hk" target="_blank">
+                        <img src="https://hypeddit-gates-prod.s3.amazonaws.com/o847hk_coverartmanual">
+                        <div id="covertext">
+                            <b>Zero Chaotic & RIA MOR</b>
+                            <br>Home
+                        </div>
+                    </a>
+                    <!--6-->
+                    <a id="cover" href="https://hypeddit.com/4lo2z3" target="_blank">
+                        <img src="https://hypeddit-gates-prod.s3.amazonaws.com/4lo2z3_coverartmanual">
+                        <div id="covertext">
+                            <b>D-Mode-D</b>
+                            <br>Hurry Up (Rising Eagle Remix)
+                        </div>
+                    </a>
+                    <!--5-->
+                    <a id="cover" href="https://hypeddit.com/nck15w" target="_blank">
+                        <img src="https://hypeddit-gates-prod.s3.amazonaws.com/nck15w_coverartmanual">
+                        <div id="covertext">
+                            <b>FurBanzai</b>
+                            <br>Necromancer Lynx
+                        </div>
+                    </a>
+                    <!--4-->
+                    <a id="cover" href="https://hypeddit.com/yyemgb" target="_blank">
+                        <img src="https://hypeddit-gates-prod.s3.amazonaws.com/yyemgb_coverartmanual">
+                        <div id="covertext">
+                            <b>FurBanzai</b>
+                            <br>Hyperlink-Teleport
+                        </div>
+                    </a>
+                    <!--3-->
+                    <a id="cover" href="https://hypeddit.com/9wy7vu" target="_blank">
+                        <img src="https://hypeddit-gates-prod.s3.amazonaws.com/9wy7vu_coverartmanual">
+                        <div id="covertext">
+                            <b>Zvykar</b>
+                            <br>Doosty
+                        </div>
+                    </a>
+                    <!--2-->
+                    <a id="cover" href="https://hypeddit.com/tg6c3v" target="_blank">
+                        <img src="https://hypeddit-gates-prod.s3.amazonaws.com/tg6c3v_coverartmanual">
+                        <div id="covertext">
+                            <b>Norbert</b>
+                            <br>Cortazar
+                        </div>
+                    </a>
+                    <!--1-->
+                    <a id="cover" href="https://hypeddit.com/kcxnoh" target="_blank">
+                        <img src="https://hypeddit-gates-prod.s3.amazonaws.com/kcxnoh_coverartmanual">
+                        <div id="covertext">
+                            <b>Rising Eagle feat. Jahn Geor</b>
+                            <br>Revelation
+                        </div>
+                    </a>
+                </div>
+        </div>
+        <!--Раздел со скриптами-->
+        <script>
+            //Скрипт на прелоадер
+            function preloader() {
+                const body = $('body');
 
-          body.addClass('loaded_hiding');
-          window.setTimeout(function () {
-              body.addClass('loaded');
-              body.removeClass('loaded_hiding');
-          }, 500);
-      }
-      $(window).on('load', function () {
-          preloader();
-          spoilers();
-      });
-      //Кнопка вверх
-      $(function() {
-        $(window).scroll(function() {
-          if($(this).scrollTop() != 0) {
-            $('#totopbtn').fadeIn();
-          } else {
-            $('#totopbtn').fadeOut();
-          }
-        });
-          $('#totopbtn').click(function() {
-            $('body,html').animate({scrollTop:0},800);
-          });
-      });
-    </script>
-    <script>
-      $(function () {
-        $(".mainpagediv").load("../parts/mainpage.html");
-      });
-      $(function () {
-        $(".menudiv").load("../parts/menu.html");
-      });
-      $(function () {
-        $(".menuscrdiv").load("../parts/menuscr.html");
-      });
-    </script>
-  </head>
-  <div id="totopbtn"><img src="../images/uparrow.png"></div>
-  <body>
-    <div id="preloader">
-      <p class="preloader_text">...she's calling you...</p>
-    </div>
-    <!--<div class="menudiv"></div>
-    <div class="menuscrdiv"></div>-->
-    <iframe id="menudiv" src="https://songlywings.site/parts/menu.html" width="1000" height="1000" frameborder="0">
-    <iframe id="menuscrdiv" src="https://songlywings.site/parts/menuscr.html" width="1000" height="1000" frameborder="0">
-    <div class="mainpagediv"></div>
-  </body>
+                body.addClass('loaded_hiding');
+                window.setTimeout(function () {
+                    body.addClass('loaded');
+                    body.removeClass('loaded_hiding');
+                }, 500);
+            }
+            $(window).on('load', function () {
+                preloader();
+                spoilers();
+            });
+            //Скрипт на мобильное меню
+            $(document).ready(function(){  //дожидаемся загрузки страницы
+                $('.openmenu').on("click", function(){  //вешаем событие на клик по кнопке id="btn1"
+                    $('#menum').toggle(); //включает/выключает элемент id="text"
+                });
+            });
+	        //Скрипт на отключение контекстного меню
+	        //document.oncontextmenu = function (){return false};
+            //Скрипт на геолокацию
+            window.onload = function() {
+                if (ymaps.geolocation.country == 'Россия') {
+                jQuery(".reg_ru").show();
+                jQuery(".reg_en").hide();
+                }
+                else {
+                jQuery(".reg_ru").hide();
+                jQuery(".reg_en").show();
+                }
+            }
+        </script>
+    </body>
 </html>
