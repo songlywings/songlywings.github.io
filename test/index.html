@@ -55,9 +55,12 @@
     <div class="mainpagediv"></div>
     <div class="menuscrdiv"></div>
     <script>
-      $(function () {
+      var ready;
+      ready = function() {
         $(".menuscrdiv").load("../parts/menuscr.html");
-      });
+      };
+      $(document).ready(ready);
+      $(document).on('page:load', ready);
     </script>
   </body>
 </html>
