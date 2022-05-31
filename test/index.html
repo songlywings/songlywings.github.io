@@ -39,12 +39,6 @@
       $(function () {
         $(".mainpagediv").load("../parts/mainpage.html");
       });
-      $(function () {
-        $(".menudiv").load("../parts/menu.html");
-      });
-      $(function () {
-        $(".menuscrdiv").load("../parts/menuscr.html");
-      });
     </script>
   </head>
   <div id="totopbtn"><img src="../images/uparrow.png"></div>
@@ -53,7 +47,17 @@
       <p class="preloader_text">...she's calling you...</p>
     </div>
     <div class="menudiv"></div>
-    <div class="menuscrdiv"></div>
+    <script>
+      $(function () {
+        $(".menudiv").load("../parts/menu.html");
+      });
+    </script>
     <div class="mainpagediv"></div>
+    <div class="menuscrdiv"></div>
+    <script>
+      $(function () {
+        $(".menuscrdiv").load("../parts/menuscr.html");
+      });
+    </script>
   </body>
 </html>
