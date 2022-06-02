@@ -41,12 +41,20 @@ function geolocation() {
         jQuery(".reg_en").show();
     }
 };
+//Скрипт на плавную прокрутку до якоря
+function anchorscroll() {
+$("body").on('click', '[href*="#"]', function(e){
+    var fixed_offset = 100;
+    $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixed_offset }, 1000);
+    e.preventDefault();
+})};
 
 //Выполнение всех скриптов после загрузки страницы
 setTimeout(function () {
     upbutton();
     menum();
     geolocation();
+    anchorscroll();
 }, 500);
 $(window).on('load', setTimeout(function () {
     preloader();
