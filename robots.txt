@@ -1,7 +1,7 @@
 User-agent: *
 #Запрет индексирования на заданные разделы
-Disallow: /js/
-Disallow: /images/
-Disallow: /ru/
+Disallow: /js
+Disallow: /images
 Disallow: /style.css
 Disallow: /parts
+Disallow: /fonts

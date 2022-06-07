@@ -1,3 +1,28 @@
+@font-face {
+    font-family: Segoe UI;
+    src: url(/fonts/Segoe_UI.ttf);
+}
+@font-face {
+    font-family: Segoe UI;
+    font-weight: bold;
+    src: url(/fonts/Segoe_UI_Bold.ttf);
+}
+@font-face {
+    font-family: Segoe UI;
+    font-style: italic;
+    src: url(/fonts/Segoe_UI_Italic.ttf);
+}
+@font-face {
+    font-family: Segoe UI;
+    font-weight: bold;
+    font-style: italic;
+    src: url(/fonts/Segoe_UI_BoldItalic.ttf);
+}
+@font-face {
+    font-family: MS Mincho Regular;
+    src: url(/fonts/MS_Mincho.ttf);
+}
+
 #totopbtn {
     width: 50px;
     height: 50px;
