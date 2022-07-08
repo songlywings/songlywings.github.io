@@ -224,8 +224,7 @@ body {
 
 /*Футер*/
 #footerbg {
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: block;
     background-image: url(/images/bgmain3.png);
     z-index: 0;
     padding-top: 7px;
@@ -234,23 +233,22 @@ body {
     padding-right: 7px;
     user-select: none;
 }
-#footercontentleft {
+#footercontent {
     display: flex;
-    justify-content: left;
+    justify-content: center;
 }
-#footercontentleft a {
+#footercontent a {
     text-align: center;
     color: white;
-    margin-top: 7px;
 }
-#footercontentright {
+/*#footercontentright {
     display: flex;
     justify-content: right;
     margin-bottom: -5px;
 }
 #footercontentright a {
     padding-bottom: -5px;
-}
+}*/
 
 /*Бегущая строка*/
 #runningline {
