@@ -154,6 +154,12 @@ body {
     z-index: 5;
     user-select: none;
 }
+.menudiv {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
 @media screen and (min-device-width: 500px) {
     #menubar {
         display: block;
@@ -203,10 +209,11 @@ body {
     display: none;
     visibility: hidden;
     user-select: none;
+    z-index: 0;
 }
 .header {
     width: 100%;
-    z-index: 1;
+    z-index: 3;
 }
 @media screen and (min-device-width: 500px) {
     #header {
@@ -225,6 +232,7 @@ body {
     padding-left: 7px;
     padding-right: 7px;
     user-select: none;
+    z-index: 3;
 }
 #footertext {
     display: flex;
@@ -255,6 +263,7 @@ body {
     text-align: center;
     padding-top: 5px;
     padding-bottom: 3px;
+    box-shadow: 0px 0px 10px 1px;
     user-select: none;
     z-index: 3;
 }
@@ -262,8 +271,9 @@ body {
 #sitebody {
     display: block;
     background-image: url(images/bgmain.png);
+    /*box-shadow: 0px 0px 10px 1px;*/
     user-select: none;
-    z-index: 2;
+    z-index: 4;
 }
 /*Галерея с обложками*/
 #coversgallery {
@@ -295,11 +305,12 @@ body {
     color: white;
     display: block;
     position: absolute;
+    margin: auto;
     left: 0;
     right: 0;
     bottom: 0;
+    bottom: 40%;
     opacity: 0;
-    bottom: 103px;
     transition: all 0.3s ease-in-out;
     z-index: 4;
 }
@@ -317,14 +328,6 @@ body {
     display: block;
     position: relative;
     z-index: 3; 
-}
-
-/*Региональный выбор*/
-#reg_ru {
-    display: none
-}
-#reg_en {
-    display: none
 }
 
 /*Инфо-раздел*/
